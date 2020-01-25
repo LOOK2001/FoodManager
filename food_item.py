@@ -1,5 +1,3 @@
-from flask import Flask, escape, requests
-
 class FoodItem:
     name = 'default'
     cal = 30

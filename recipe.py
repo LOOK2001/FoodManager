@@ -1,5 +1,4 @@
 from flask import Flask
-from food_item import food_item 
 
 class Recipe:
     ingredients = {}
@@ -17,7 +16,7 @@ class Recipe:
             self.ingredients[item] = quantity
 
     def deleteByItem(self, item):
-        pass
+        self.ingredients.remove(item)
 
     def deleteByIndex(self, index):
         del self.ingredients[index]
