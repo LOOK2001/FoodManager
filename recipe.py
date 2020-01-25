@@ -2,13 +2,15 @@ from flask import Flask
 
 class Recipe:
     ingredients = {}
-    meal_name = "meal"
+    mealType = "breakfast"
+    recipeName = "Yum"
     total_price = 0
     total_weight = 0
 
-    def __init__(self,ingredients,name):
+    def __init__(self,ingredients,meal,name):
         self.ingredients = ingredients
-        self.meal_name = name
+        self.mealType = meal
+        self.recipeName = name
 
     def addItem(self, item, quantity):
         if item in self.ingredients.keys():
@@ -35,6 +37,15 @@ class Recipe:
             price += (item.price * self.ingredients[item])
 
         return price
+
+    def getIngredients(self):
+        return self.ingredients
+    
+    def getMealType(self):
+        return self.mealType
+
+    def getRecipeName(self):
+        return self.recipeName
 
 
 

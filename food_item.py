@@ -1,6 +1,6 @@
 class FoodItem:
     name = 'default'
-    cal = 30
+    cal = 0
     price = 0
     quantity = 0
 
@@ -21,3 +21,15 @@ class FoodItem:
 
     def setQuantity(self, quantity):
         self.quantity = quantity
+    
+    def getQuantity(self):
+        return self.quantity
+
+    def getCal(self):
+        return self.cal
+
+    def getPrice(self):
+        return self.price
+
+    def getName(self):
+        return self.name
