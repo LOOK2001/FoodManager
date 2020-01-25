@@ -1,4 +1,5 @@
 from flask import Flask
+import food_item
 
 class Recipe:
     ingredients = []
