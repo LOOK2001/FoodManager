@@ -54,3 +54,21 @@ class RecipeList:
 
     def getRecipies(self):
         return self.__recipies
+
+class FoodList:
+    __Foodlist = []
+
+    def __init__(self,food):
+        self.__Foodlist = food
+
+    def addFood(self, foodItem):
+        self.__Foodlist.append(foodItem)
+
+    def deleteFoodByIndex(self, index):
+        del self.__Foodlist[index]
+
+    def deleteFoodByItem(self, foodItem):
+        self.__Foodlist.remove(foodItem)
+
+    def getFoodList(self):
+        return self.__Foodlist
