@@ -1,10 +1,23 @@
 class food_management:
     overallRecipe = []
-    def __init__(self, inputRecipe):
+    foodList = []
+    def __init__(self, inputRecipe, inputFoodList):
         self.overallRecipe = inputRecipe
+        self.foodList = inputFoodList
 
     def findAvaliableRecipe(self):
-        ingredients = {}
-        for x in self.overallRecipe:
-            ingredients = x.getIngredients
-
+        avaliableRecipe = []
+        ingredientOfRecipe = {}
+        for currentRecipe in self.overallRecipe:
+            hasIngredients = false
+            ingredientOfRecipe = currentRecipe.getIngredients
+                for currentIngredient in ingredientOfRecipe:
+                    for currentFood in self.foodList:
+                        if currentIngredient == currentFood
+                            hasIngredients = true
+                            break
+                    if hasIngredients == false
+                        break
+                if hasIngredients == true       
+                      avaliableRecipe.append(currentRecipe)
+                        
