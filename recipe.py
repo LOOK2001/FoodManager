@@ -4,6 +4,7 @@ class Recipe:
     ingredients = {}
     meal_name = "meal"
     total_price = 0
+    total_weight = 0
 
     def __init__(self,ingredients,name):
         self.ingredients = ingredients
