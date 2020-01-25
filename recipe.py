@@ -1,11 +1,16 @@
 from flask import Flask
+from enum import Enum
+
+class MealType(Enum):
+    BREAKFAST = 1
+    LUNCH = 2
+    DINNER = 3
 
 class Recipe:
     ingredients = {}
-    mealType = "breakfast"
+    mealType = MealType.BREAKFAST
     recipeName = "Yum"
     total_price = 0
-    total_weight = 0
 
     def __init__(self,ingredients,meal,name):
         self.ingredients = ingredients
