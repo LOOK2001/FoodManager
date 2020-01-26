@@ -16,6 +16,8 @@ class Recipe:
         self.ingredients = ingredients
         self.mealType = meal
         self.recipeName = name
+        for item, price in ingredients:
+            self.total_price += price
 
     def addItem(self, item, quantity):
         if item in self.ingredients.keys():
@@ -37,11 +39,10 @@ class Recipe:
         return cal
 
     def getTotalPrice(self):
-        price = 0
-        for item in self.ingredients.keys():
-            price += (item.price * self.ingredients[item])
-
-        return price
+        self.total_price = 0
+        for item, price in self.ingredients:
+            self.total_price += price
+        return self.total_price
 
     def getIngredients(self):
         return self.ingredients
