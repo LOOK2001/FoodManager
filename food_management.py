@@ -50,7 +50,7 @@ class food_management:
     def findCorrespondingMeal(self, allRecipe, meal):
         foundRecipe = []
         for currentRecipe in allRecipe:
-            if meal in currentRecipe.getMealType:
+            if meal == currentRecipe.getMealType:
                 foundRecipe.append(currentRecipe)
         return foundRecipe
 
