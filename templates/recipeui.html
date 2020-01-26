@@ -1,0 +1,41 @@
+<!-- ./templates/index.html -->
+<!DOCTYPE html>
+    <html>
+    <head>
+      <!-- link to the Todo MVC index.css file -->
+      <meta charset="UTF-8">
+      <title>Realtime Todo List</title>
+    </head>
+
+    <body>
+      <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="recipe_form">Recipes</a>
+        <a href="meal_plan">Meal Plan</a>
+      </div>
+      {% block content %}
+      <h2> Recpie Creator</h2>
+      <form action="" method="post">
+        <p>
+          {{form.meal_name.label}}
+          {{form.meal_name(size=30)}}
+        </p>
+        <p>
+          {{form.ingredient.label}}
+          {{form.ingredient(size=30)}}
+        </p>
+        <p>{{form.submit()}}</p>
+      </form>
+      {% endblock %}
+
+      <h1> Current Meal List</h1>
+        <ul>
+          {% for meal in meals %}
+            <li style="font-size: 30pt">{{meal.name}}</li>
+            <ul>
+              <li style="font-size: 30pt">{{meal.ingredient}}</li>
+            </ul>
+          {% endfor %}
+        </ul>
+    </body>
+    </html>

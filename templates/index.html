@@ -1,0 +1,72 @@
+<!-- ./templates/index.html -->
+<!DOCTYPE html>
+    <html>
+    <head>
+      <!-- link to the Todo MVC index.css file -->
+      <meta charset="UTF-8">
+      <title>Realtime Todo List</title>
+
+      <style>
+        * {
+            box-sizing: border-box;
+          }
+        /* Create two equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 50%;
+          padding: 10px;
+        }
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      </style>
+
+    </head>
+
+    <body>
+      <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="recipe_form">Recipes</a>
+        <a href="meal_plan">Meal Plan</a>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h1>Groceries</h1>
+          <form action="/add" method="POST">
+            <input type="text" name="groceryitem" placeholder="Food Item">
+            <input type="text" name="quantity" placeholder="Amount">
+            <input type="submit" value="Add Item(s)">
+          </form>
+
+          <h1> Current Grocery List</h1>
+            <ul>
+              {% for food in foods %}
+                <li style="font-size: 30pt">{{food.quantity}} x {{food.name}}</li>
+
+              {% endfor %}
+            </ul>
+            <!-- go shopping button -->
+            <form action="/shop" method="POST">
+              <input type="submit" value="GO SHOPPING!">
+            </form>
+
+        </div>
+        <div class="column">
+          <h1> Current Stock</h1>
+            <ul>
+              {% for stock in stocks %}
+                <li style="font-size: 30pt">{{stock.name}}({{stock.quantity}})
+                </li>
+              {% endfor %}
+            </ul>
+          <h2> Remove Item </h2>
+          <form action="/remove_food" method="POST">
+            <input type="text" name="groceryitem" placeholder="Item to Remove">
+            <input type="submit" value="Remove!">
+          </form>
+        </div>
+      </div>
+    </body>
+    </html>
